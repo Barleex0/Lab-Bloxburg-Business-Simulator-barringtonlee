@@ -1,7 +1,8 @@
 public class Buisness {
+ final private int TAX = 34 ; 
  private static int openBuiCount;
  private String buisnessName;
- private float costs;
+ private float costs ;
  private float money;
  private float startingfunds;
  private name owner;
@@ -15,6 +16,7 @@ public class Buisness {
     money = startingfunds;
     owner = own;
     openBuiCount += 1;
+    workers[0] = new Employee(new name("Martha","Stewards"), 12, "Helper");
  };
 
 
@@ -35,8 +37,12 @@ class Employee {
 }
 
  void doBuissnes(){
- costs = 0;
- 
+ costs = 35;
+ for (Employee i : workers){
+    costs += i.Salary;
+ }
+
+
 
  };
 
@@ -48,19 +54,24 @@ class Employee {
 
 
  // Getters
- name Get_Owner(){
+name Get_Owner(){
     return owner;
  };
- String Get_Buisness_Name(){
+String Get_Buisness_Name(){
     return buisnessName ;
  };
- float Get_costs(){
+float Get_costs(){
     return costs;
  };
- int Get_OPEN(){
+int Get_OPEN(){
     return openBuiCount;
  };
+String Get_Out(){
+    return ("heres what you have " + buisnessName + "/" + money + "/" + owner.fName + " " + owner.lName +"\n money after costs" + (money-costs-TAX) + workers[0].Name.fName )  ;
 
+
+
+}
 
 
 
