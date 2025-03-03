@@ -6,12 +6,48 @@ public class Bloxberg {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
         System.out.println(
-            "Welcome to the game you \n for now all you can do is lose money \n"+
+            "Welcome to the game you \n for now all you can do is lose1 money \n"+
         " but really thats all buisness really is anyway"+
         " \n \n Press 1 for a tutorial \n");
        
          gamestate.start(inp.nextInt());
-         inp.close();
+         
+           // Fntemp stores both buissness and first name to save on memory
+           String fNtemp;
+           name ownerTemp;
+           int dif;
+           inp.nextLine();
+           
+           
+           System.out.println("okay gimme a first name >>");
+           fNtemp = inp.nextLine();
+           System.out.println("okay gimme a last name >>");
+           ownerTemp = new name(fNtemp, inp.nextLine());
+
+           System.out.println("Snazzy Buissness name Go >>");
+           fNtemp = inp.nextLine();
+
+           System.out.println("now difficulty 1..3 easy to hard");
+           dif = inp.nextInt();
+           inp.nextLine();
+
+           switch(dif){
+               case 1:
+             mBiz = new Buisness(fNtemp,ownerTemp,10000);
+             break;
+                   
+   
+               case 2:
+             mBiz = new Buisness(fNtemp,ownerTemp,6000);
+             break;
+                   
+   
+               case 3:
+                 mBiz = new Buisness(fNtemp,ownerTemp,3000);
+                 break;
+                  
+               default: mBiz = new Buisness(fNtemp,ownerTemp,6000);
+           }
 
          System.out.println("heres your buissness" + mBiz.Get_Out() );
 
@@ -24,15 +60,16 @@ public class Bloxberg {
 
 
 
-
-
-
-
     }
+
+
+
     
-    class gamestate{
+    
+    private class gamestate{
         //this just stores game related data so i can keep the main simple
         static Scanner gsinp = new Scanner(System.in);
+        
         
 
         static void  start(int i){
@@ -47,11 +84,9 @@ public class Bloxberg {
                 " during the buy phase you can get more employees and buy and sell products each employee has a cost and each product a price which is randomized\n"+
                 " -uh i mean \" Changes with market pressure \" every day\n\n then there is the cry phase where you lose money (or gain money) (but mostly lose money)\n"+
                 " and see the fruits of your buissness strategy \n\n after that the game ends and a new day begins");
-                start(gsinp.nextInt());  2
+                start(gsinp.nextInt()); 
             }
-            else {
-                begin();
-            }
+            
         }
 
         static Buisness begin(){
@@ -75,15 +110,15 @@ public class Bloxberg {
 
             switch(dif){
                 case 1:
-                   return Bloxberg.mBiz = new Buisness(fNtemp,ownerTemp,10000);
+                   return mBiz = new Buisness(fNtemp,ownerTemp,10000);
                     
     
                 case 2:
-                   return Bloxberg.mBiz = new Buisness(fNtemp,ownerTemp,6000);
+                   return mBiz = new Buisness(fNtemp,ownerTemp,6000);
                     
     
                 case 3:
-                  return  Bloxberg.mBiz = new Buisness(fNtemp,ownerTemp,3000);
+                  return  mBiz = new Buisness(fNtemp,ownerTemp,3000);
                    
                 default: return  Bloxberg.mBiz = new Buisness(fNtemp,ownerTemp,6000);
             }
@@ -100,4 +135,5 @@ public class Bloxberg {
 
 
 }
+
 

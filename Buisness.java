@@ -6,7 +6,7 @@ public class Buisness {
  private float money;
  private float startingfunds;
  private name owner;
- private Employee[] workers;
+ private Employee workers;
  //Todo implement selling products
  //private Products[] products;
 
@@ -16,7 +16,7 @@ public class Buisness {
     money = startingfunds;
     owner = own;
     openBuiCount += 1;
-    workers[0] = new Employee(new name("Martha","Stewards"), 12, "Helper");
+    workers = new Employee(new name("Martha","Stewards"), 12, "Helper");
  };
 
 
@@ -36,15 +36,7 @@ class Employee {
     
 }
 
- void doBuissnes(){
- costs = 35;
- for (Employee i : workers){
-    costs += i.Salary;
- }
 
-
-
- };
 
 
 
@@ -67,7 +59,7 @@ int Get_OPEN(){
     return openBuiCount;
  };
 String Get_Out(){
-    return ("heres what you have " + buisnessName + "/" + money + "/" + owner.fName + " " + owner.lName +"\n money after costs" + (money-costs-TAX) + workers[0].Name.fName )  ;
+    return ("heres what you have " + buisnessName + "/" + money + "/" + owner.fName + " " + owner.lName +"\n money after costs" + (money-costs-TAX) +"  " + workers.Name.fName )  ;
 
 
 
