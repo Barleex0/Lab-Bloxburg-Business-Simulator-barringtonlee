@@ -1,0 +1,14 @@
+/*public class Employee {
+    public int Salary;
+    public name Name;
+    public String role;
+    //this is going to be an enum later if i was going to make this real.
+
+    Employee(name id,int pay,String job){
+        Name = id;
+        Salary = pay;
+        role = job;
+    };
+
+
+}*/
